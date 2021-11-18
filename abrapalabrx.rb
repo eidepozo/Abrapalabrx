@@ -8,7 +8,7 @@ def abrapalabrx(palabra)
     for i in (0..frec.length()-1)
         keyname = frec.key(frec.values.max)
         suma += (26 - i)*(frec[keyname])
-        frec = frec.except(keyname)
+        frec = frec.reject { |k, v| [keyname].include? k }
         #puts frec
     end
     puts "Para la palabra "+ palabra+ " el valor máximo es: "+suma.to_s
